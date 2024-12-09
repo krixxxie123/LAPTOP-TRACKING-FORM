@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Responses</title>
+</head>
+<body>
+    <h1>Form Responses</h1>
+    <table id="responsesTable" border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Grade and Section</th>
+            <th>Laptop No.</th>
+            <th>Borrowing Date</th>
+            <th>Return Date</th>
+            <th>Purpose</th>
+        </tr>
+    </table>
+
+    <script>
+        // Replace with your Web App URL
+        var webAppUrl = "https://script.google.com/macros/s/AKfycbzc04UGSQMMoFj3MX0dYPJ7eC04jtPaC6blfEmM1XhuMi2f9zqtUAvg9dOIomYDgo92-g/exec";
+
+        // Fetch data from Google Apps Script Web App
+        fetch(webAppUrl)
+            .then(response => response.json())
+            .then(data => {
+                var table = document.getElementById('responsesTable');
+                data.forEach(function(rowData) {
+                    var row = table.insertRow(-1);
+                    Object.values(rowData).forEach(function(cellData) {
+                        var cell = row.insertCell();
+                        cell.textContent = cellData;
+                    });
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
