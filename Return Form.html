@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Return Form</title>
+  <title>Borrow Form</title>
   <link rel="stylesheet" href="Homepage.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <nav>
@@ -12,30 +13,122 @@
     </label>
     <label class="logo">CCAJYV</label>
     <ul>
-        <li><a href="Borrow Form.html">Borrow Form</a></li>
-        <li><a class="active" href="#">Return Form</a></li>
-        <li><a href="Borrow Form Response.html">Borrow Form Responses</a></li>
-        <li><a href="Return Form Responses.html">Return Form Responses</a></li>
-        <li><a href="Developers.html">Developers</a></li>
+      <li><a class="active" href="#">Borrow Form</a></li>
+      <li><a href="Return Form.html">Return Form</a></li>
+      <li><a href="Borrow Form Response.html">Borrow Form Responses</a></li>
+      <li><a href="Return Form Responses.html">Return Form Responses</a></li>
+      <li><a href="Developers.html">Developers</a></li>
     </ul>
   </nav>
 
   <style>
-     form {
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      width: 100%;
+      background-color: #2196F3;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      padding: 10px 20px;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      float: right;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+
+    nav ul li a.active {
+      font-weight: bold;
+    }
+
+    nav .checkbtn {
+      display: none;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2196F3;
+        position: absolute;
+        top: 50px;
+        left: 0;
+      }
+
+      nav ul li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      nav ul li a {
+        font-size: 16px;
+      }
+
+      nav .checkbtn {
+        display: block;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      #check:checked ~ ul {
+        display: flex;
+      }
+    }
+
+    /* Form Container */
+    body {
+      margin-top: 60px; /* Adjust margin for the fixed navbar */
+    }
+
+    form {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh; /* This ensures the form is vertically centered */
-      margin: 0;
+      align-items: flex-start;
+      padding: 20px;
+      min-height: calc(100vh - 60px);
     }
+
     iframe {
-      width: 700px;
-      height: 700px;
+      width: 100%;
+      max-width: 700px;
+      height: 90vh;
+      border: none;
     }
   </style>
-  <form>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCw8ASNXuA-XwIdvMOyPVoV_vYynZQFYhTQJbG3-oKLSqCkA/viewform?embedded=true" width="640" height="1975" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </form>
 
+  <form>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCw8ASNXuA-XwIdvMOyPVoV_vYynZQFYhTQJbG3-oKLSqCkA/viewform?embedded=true" width="640" height="1978" frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
+  </form>
 </body>
 </html>
