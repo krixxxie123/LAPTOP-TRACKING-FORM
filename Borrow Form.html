@@ -21,20 +21,76 @@
   </nav>
 
   <style>
-     form {
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      width: 100%;
+      background-color: #2196F3;
+      overflow: hidden;
+      position: fixed; /* Keep the navbar at the top */
+      top: 0;
+      left: 0;
+      z-index: 1000; /* Ensure it stays above everything else */
+      padding: 10px 20px;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      float: right;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+
+    nav ul li a.active {
+      font-weight: bold;
+    }
+
+    /* Form and iframe container */
+    body {
+      margin-top: 60px; /* Push content below the fixed navbar */
+    }
+
+    form {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh; /* This ensures the form is vertically centered */
-      margin: 0;
+      align-items: flex-start;
+      padding: 20px;
+      min-height: calc(100vh - 60px); /* Account for navbar height */
     }
+
     iframe {
-      width: 700px;
-      height: 700px;
+      width: 100%;
+      max-width: 700px;
+      height: 90vh; /* Dynamic height based on the viewport */
+      border: none;
     }
   </style>
+
   <form>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJHYQJLp3XPFNRzuiJznwzdnPfzTuO6sdMpg1R-fuNuWPxSg/viewform?embedded=true" width="640" height="1240" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJHYQJLp3XPFNRzuiJznwzdnPfzTuO6sdMpg1R-fuNuWPxSg/viewform?embedded=true">
+      Loading…
+    </iframe>
   </form>
 
 </body>
