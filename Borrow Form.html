@@ -3,6 +3,7 @@
 <head>
   <title>Borrow Form</title>
   <link rel="stylesheet" href="Homepage.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <nav>
@@ -33,10 +34,10 @@
       width: 100%;
       background-color: #2196F3;
       overflow: hidden;
-      position: fixed; /* Keep the navbar at the top */
+      position: fixed;
       top: 0;
       left: 0;
-      z-index: 1000; /* Ensure it stays above everything else */
+      z-index: 1000;
       padding: 10px 20px;
     }
 
@@ -52,7 +53,7 @@
     }
 
     nav ul li {
-      display: inline;
+      display: inline-block;
       margin-right: 15px;
     }
 
@@ -66,9 +67,46 @@
       font-weight: bold;
     }
 
-    /* Form and iframe container */
+    nav .checkbtn {
+      display: none;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2196F3;
+        position: absolute;
+        top: 50px;
+        left: 0;
+      }
+
+      nav ul li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      nav ul li a {
+        font-size: 16px;
+      }
+
+      nav .checkbtn {
+        display: block;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      #check:checked ~ ul {
+        display: flex;
+      }
+    }
+
+    /* Form Container */
     body {
-      margin-top: 60px; /* Push content below the fixed navbar */
+      margin-top: 60px; /* Adjust margin for the fixed navbar */
     }
 
     form {
@@ -76,13 +114,13 @@
       justify-content: center;
       align-items: flex-start;
       padding: 20px;
-      min-height: calc(100vh - 60px); /* Account for navbar height */
+      min-height: calc(100vh - 60px);
     }
 
     iframe {
       width: 100%;
       max-width: 700px;
-      height: 90vh; /* Dynamic height based on the viewport */
+      height: 90vh;
       border: none;
     }
   </style>
@@ -92,6 +130,5 @@
       Loading…
     </iframe>
   </form>
-
 </body>
 </html>
